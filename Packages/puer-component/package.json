@@ -1,0 +1,19 @@
+{
+    "name": "com.tencent.puerts.component",
+    "displayName": "Puerts component",
+    "version": "1.0.0",
+    "description": "Monobehaviour like Typescript Component",
+    "keywords": [
+      "Script"
+    ],
+    "author": {
+      "name": "zgz682000",
+      "email": "zgz682000@163.com",
+      "url": "https://github.com/zgz682000"
+    },
+    "category": "Libraries",
+    "dependencies": {
+      "com.tencent.puerts.core": "1.4.0",
+      "com.tencent.puerts.ts-loader": "1.0.0-pre.1"
+    }
+  }
