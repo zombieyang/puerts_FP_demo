@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "ES2015",
+        "noImplicitAny": true,
+        "typeRoots": [
+            "../Gen/Typing",
+            "../../Packages/puer-component/Typing"
+        ],
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "inlineSourceMap": true
+    }
+}

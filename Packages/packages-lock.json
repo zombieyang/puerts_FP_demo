@@ -17,13 +17,12 @@
       "url": "https://package.openupm.com"
     },
     "com.tencent.puerts.ts-loader": {
-      "version": "1.0.0-pre.1",
+      "version": "file:com.tencent.puerts.ts-loader@1.0.0-pre.1",
       "depth": 0,
-      "source": "registry",
+      "source": "embedded",
       "dependencies": {
         "com.tencent.puerts.core": "1.4.0"
-      },
-      "url": "https://package.openupm.com"
+      }
     },
     "com.unity.cinemachine": {
       "version": "2.8.9",

@@ -6,16 +6,12 @@ using System.Linq;
 using UnityEngine;
 
 namespace Puerts.Component {
-    
-    
 
     public class TsComponent : MonoBehaviour, ITsTransporterHolder, ITsPropertyHolder {
 
-        
-
         public List<Property> properties;
 
-        public TypescriptAsset tsFile;
+        public string tsModulePath;
 
         private TsTransporter _transporter;
 
@@ -37,8 +33,8 @@ namespace Puerts.Component {
 
         public List<Property> Properties => properties;
 
-        public void Init(TypescriptAsset tsAsset){
-            this.tsFile = tsAsset;
+        public void Init(string pTsModulePath){
+            tsModulePath = pTsModulePath;
             Init();
         }
 
@@ -48,11 +44,11 @@ namespace Puerts.Component {
             }
             var convertedProperties = this.ConvertPropertiesValue();
             convertedProperties.AddRange(InternalProperties);
-            _transporter = new TsTransporter(tsFile.specifier, convertedProperties);
+            _transporter = new TsTransporter(tsModulePath, convertedProperties);
         }
 
         private void Awake() {
-            if (this.tsFile == null){
+            if (string.IsNullOrEmpty(tsModulePath)){
                 return;
             }
             Init();

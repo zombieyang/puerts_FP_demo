@@ -10,7 +10,7 @@ namespace Puerts.Component {
     {
         public List<Property> properties;
 
-        public TypescriptAsset tsFile;
+        public string tsModulePath;
 
         private TsTransporter _transporter;
 
@@ -25,11 +25,11 @@ namespace Puerts.Component {
 
         public void Init()
         {
-            if (_transporter != null){
+            if (_transporter != null)   {
                 return;
             }
             var convertedProperties = this.ConvertPropertiesValue();
-            _transporter = new TsTransporter(tsFile.specifier, convertedProperties);
+            _transporter = new TsTransporter(tsModulePath, convertedProperties);
         }
 
         private void OnEnable() {

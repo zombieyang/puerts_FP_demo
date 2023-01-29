@@ -46,7 +46,7 @@ namespace Puerts.Component
         }
         
 
-        protected static List<Property> PickProperties(TypescriptAsset ts)
+        protected static List<Property> PickProperties(string tsModulePath)
         {
             try 
             {
@@ -54,7 +54,7 @@ namespace Puerts.Component
                     "puerts-component/properties-pick.mts", "default"
                 );
 
-                JSObject cls = EditorJsEnv.ExecuteModule<JSObject>(ts.specifier, "default");
+                JSObject cls = EditorJsEnv.ExecuteModule<JSObject>(tsModulePath, "default");
                 return propertiesPickFunc(cls);
             }
             catch (Exception e)
@@ -65,13 +65,13 @@ namespace Puerts.Component
         }
 
         private SerializedProperty _propertiesProp;
-        private SerializedProperty _tsFileProp;
+        private SerializedProperty _tsModulePathProp;
         private List<Property> properties;
 
         void OnEnable()
         {
             ReloadJsEnv();
-            _tsFileProp = serializedObject.FindProperty("tsFile");
+            _tsModulePathProp = serializedObject.FindProperty("tsModulePath");
             _propertiesProp = serializedObject.FindProperty("properties");
             _propIndexByName.Clear();
             for (var j = 0; j < _propertiesProp.arraySize; j++)
@@ -86,9 +86,8 @@ namespace Puerts.Component
                 _propIndexByName.Add(propertyNameProp.stringValue, propertyProp);
             }
 
-            if (_tsFileProp.objectReferenceValue != null)
-            {
-                properties = PickProperties((TypescriptAsset)_tsFileProp.objectReferenceValue);
+            if (!string.IsNullOrEmpty(_tsModulePathProp.stringValue)){
+                properties = PickProperties(_tsModulePathProp.stringValue);
             }
         }
 
@@ -98,11 +97,18 @@ namespace Puerts.Component
         {
             serializedObject.Update();
             EditorGUILayout.BeginVertical();
-            if (_tsFileProp != null)
+            if (_tsModulePathProp != null)
             {
                 EditorGUILayout.BeginHorizontal();
-                _tsFileProp.objectReferenceValue =
-                    EditorGUILayout.ObjectField(new GUIContent("TS File"), _tsFileProp.objectReferenceValue, typeof(TypescriptAsset), true);
+
+                TypescriptAsset value = TSDirectoryCollector.GetAssetBySpecifier(_tsModulePathProp.stringValue);
+                object result = EditorGUILayout.ObjectField(
+                    new GUIContent("TS File"), 
+                    value, 
+                    typeof(TypescriptAsset), 
+                    true
+                );
+                _tsModulePathProp.stringValue = result == null ? "" : ((TypescriptAsset)result).specifier;
                 EditorGUILayout.EndHorizontal();
             }
             
