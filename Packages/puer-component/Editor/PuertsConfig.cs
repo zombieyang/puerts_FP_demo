@@ -11,17 +11,6 @@ using UnityEngine.UI;
 [Configure]
 public class PuertsConfig
 {
-
-    [CodeOutputDirectory]
-    static string OutputDirectory
-    {
-        get
-        {
-            return Application.dataPath + "/Gen/";
-        }
-    }
-
-
     [Typing]
     static IEnumerable<Type> Typings
     {

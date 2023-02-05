@@ -4,8 +4,9 @@
         "module": "ES2015",
         "noImplicitAny": true,
         "typeRoots": [
-            "../Gen/Typing",
-            "../../Packages/puer-component/Typing"
+            "../Puer_Gen/Gen/Typing",
+            "../../Packages/puer-component/Typing",
+            "../../Library/PackageCache/com.tencent.puerts.core@1.4.1-pre.1/Typing",
         ],
         "moduleResolution": "node",
         "experimentalDecorators": true,

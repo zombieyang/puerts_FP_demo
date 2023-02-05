@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 8832732922260242576}
   - component: {fileID: 9015804818509932469}
   - component: {fileID: 9015804818509932466}
-  - component: {fileID: 293059167092987009}
   m_Layer: 0
   m_Name: basketball
   m_TagString: Untagged
@@ -148,18 +147,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.01
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &293059167092987009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8205553466320886314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab60ce17a93194ba1a6e482ad97c395b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8247218560920620042
 GameObject:
   m_ObjectHideFlags: 0

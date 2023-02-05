@@ -840,7 +840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1135994919}
-  - component: {fileID: 1135994920}
+  - component: {fileID: 1135994921}
   m_Layer: 8
   m_Name: PlayerBallRoot
   m_TagString: Untagged
@@ -863,7 +863,7 @@ Transform:
   m_Father: {fileID: 937451010882981790}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1135994920
+--- !u!114 &1135994921
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -872,11 +872,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1135994918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25efc061ab7e94c23a1c91454bb9ce1d, type: 3}
+  m_Script: {fileID: 11500000, guid: a0704c7e138c04e38ae02284aea905c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstPersonController: {fileID: 453084650675541283}
-  lookingCamera: {fileID: 1635965987}
+  properties:
+  - name: firstPersonController
+    value:
+      valueTypeId: 2
+      objValue: {fileID: 453084650675541283}
+      primitiveValue: 
+      listValue: []
+  - name: lookingCamera
+    value:
+      valueTypeId: 2
+      objValue: {fileID: 1635965987}
+      primitiveValue: 
+      listValue: []
+  tsModulePath: BallSystem.mts
 --- !u!1 &1265929549
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +925,7 @@ Light:
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
-    m_Resolution: -1
+    m_Resolution: 2
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.02
@@ -1449,6 +1461,7 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 5242107653404454015}
   TopClamp: 89
   BottomClamp: -89
+  _verticalVelocity: 0
 --- !u!1 &453084650675541284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2276,3 +2289,23 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afac0ae9503e44cfa8f60f0235c2f0e2, type: 3}
+--- !u!1 &9015804817104329687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8205553466320886314, guid: afac0ae9503e44cfa8f60f0235c2f0e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 9015804817104329686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9015804817104329688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9015804817104329687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0704c7e138c04e38ae02284aea905c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties: []
+  tsModulePath: BallController.mts

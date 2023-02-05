@@ -68,6 +68,11 @@ namespace Puerts.Component {
             _transporter.InvokeHook("Start");
         }
 
+        private void Update()
+        {
+            _transporter.InvokeHook("Update");
+        }
+
         private void OnDestroy()
         {
             _transporter.InvokeHook("OnDestroy");

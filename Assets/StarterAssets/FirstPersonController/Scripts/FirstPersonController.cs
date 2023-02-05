@@ -57,7 +57,7 @@ namespace StarterAssets
 		// player
 		private float _speed;
 		private float _rotationVelocity;
-		internal float _verticalVelocity;
+		public float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
 
 		// timeout deltatime

@@ -17,10 +17,12 @@ namespace Puerts.Component {
 
     public class TsTransporter
     {
-        private delegate void TransporterInit(string moduleName, TsTransporter transporter, List<Tuple<string, object>> args);
-        private delegate void TransporterClear(string moduleName, TsTransporter transporter);
+        public static JsEnv jsEnv = new Puerts.JsEnv(new Puerts.TSLoader());
+        private delegate void TransporterInit(JSObject moduleCls, TsTransporter transporter, List<Tuple<string, object>> args);
+        private delegate void TransporterClear(JSObject moduleCls, TsTransporter transporter);
         public delegate object Hook(params object[] args);
         private string _tsModulePath;
+        private JSObject _tsModuleCls;
         private int _jsEnvIdx = -1;
         private Dictionary<string, Hook> _hooks = new Dictionary<string, Hook>();
         
@@ -28,17 +30,18 @@ namespace Puerts.Component {
             if (string.IsNullOrEmpty(tsModulePath)){
                 throw new Exception("Transporter tsModulePath is empty");
             }
-            if (jsEnvIdx >= JsEnv.jsEnvs.Count){
-                throw new Exception("jsEnv " + jsEnvIdx + " Not Exist");
-            }
-            var jsEnv = JsEnv.jsEnvs[jsEnvIdx];
+            // if (jsEnvIdx >= JsEnv.jsEnvs.Count){
+            //     throw new Exception("jsEnv " + jsEnvIdx + " Not Exist");
+            // }
+            // var jsEnv = JsEnv.jsEnvs[jsEnvIdx];
             if (jsEnv == null){
                 throw new Exception("jsEnv " + jsEnvIdx + " Disposed");
             }
             _jsEnvIdx = jsEnvIdx;
             _tsModulePath = tsModulePath;
-            var hookHandlerInit = jsEnv.ExecuteModule<TransporterInit>("puerts-component/transporter-init.mjs", "default");
-            hookHandlerInit(_tsModulePath, this, args);
+            _tsModuleCls = jsEnv.ExecuteModule<JSObject>(_tsModulePath, "default");
+            var hookHandlerInit = jsEnv.ExecuteModule<TransporterInit>("puerts-component/transporter-init.mts", "default");
+            hookHandlerInit(_tsModuleCls, this, args);
         }
 
         public void RegisterHook(string hookName, Hook hook){
@@ -46,7 +49,7 @@ namespace Puerts.Component {
         }
 
         public T InvokeHook<T>(string hookName, params object[] args){
-            var jsEnv = JsEnv.jsEnvs[_jsEnvIdx];
+            // var jsEnv = JsEnv.jsEnvs[_jsEnvIdx];
             if (jsEnv == null){
                 Debug.LogWarning("jsEnv " + _jsEnvIdx + " Disposed");
                 return default(T);
@@ -59,7 +62,7 @@ namespace Puerts.Component {
         }
 
         public void InvokeHook(string hookName, params object[] args){
-            var jsEnv = JsEnv.jsEnvs[_jsEnvIdx];
+            // var jsEnv = JsEnv.jsEnvs[_jsEnvIdx];
             if (jsEnv == null){
                 Debug.LogWarning("jsEnv " + _jsEnvIdx + " Disposed");
                 return;
@@ -76,13 +79,13 @@ namespace Puerts.Component {
         }
 
         public void Clear(){
-            var jsEnv = JsEnv.jsEnvs[_jsEnvIdx];
+            // var jsEnv = JsEnv.jsEnvs[_jsEnvIdx];
             if (jsEnv == null){
                 Debug.LogWarning("jsEnv " + _jsEnvIdx + " Disposed");
                 return;
             }
-            var hookHandlerClear = jsEnv.ExecuteModule<TransporterClear>("puerts-component/transporter-clear.mjs", "default");
-            hookHandlerClear(_tsModulePath, this);
+            var hookHandlerClear = jsEnv.ExecuteModule<TransporterClear>("puerts-component/transporter-clear.mts", "default");
+            hookHandlerClear(_tsModuleCls, this);
         }
     }
 }

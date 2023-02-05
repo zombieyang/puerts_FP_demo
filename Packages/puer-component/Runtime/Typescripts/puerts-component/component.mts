@@ -20,6 +20,9 @@ export abstract class Component {
     protected Start(){}
 
     @Hook()
+    protected Update(){}
+
+    @Hook()
     protected OnDestroy(){}
 
     @Hook()
