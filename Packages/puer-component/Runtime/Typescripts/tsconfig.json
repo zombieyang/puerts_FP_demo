@@ -1,15 +1,1 @@
-{
-    "compilerOptions": {
-      "target": "esnext",
-      "module": "ES2015",
-      "noImplicitAny": true,
-      "typeRoots": [
-        "../../../../Library/PackageCache/com.tencent.puerts.core@1.4.1-pre.1/Typing",
-        "../../../../Assets/Gen/Typing"
-      ],
-      "moduleResolution": "node",
-      "experimentalDecorators": true,
-      "inlineSourceMap": true,
-      "outDir": "../Resources"
-    }
-  }
+{"compilerOptions":{"target":"esnext","module":"ES2015","noImplicitAny":true,"typeRoots":["../../../../Library/PackageCache/com.tencent.puerts.core@1.4.1-pre.1/Typing","../../../../Assets/Puer_Gen/Gen/Typing"],"moduleResolution":"node","experimentalDecorators":true,"inlineSourceMap":true,"outDir":"./Resources","composite":true}}

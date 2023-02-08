@@ -1,6 +1,6 @@
-import { Transporter } from "puerts-component/transporter.deco.mts";
-import { Component } from "puerts-component/component.mts";
-import { Property } from "puerts-component/property.deco.mts";
+import { Transporter } from "puerts-component/transporter.deco.mjs";
+import { Component } from "puerts-component/component.mjs";
+import { Property } from "puerts-component/property.deco.mjs";
 import BallController from "./BallController.mjs";
 
 import Quaternion = CS.UnityEngine.Quaternion;

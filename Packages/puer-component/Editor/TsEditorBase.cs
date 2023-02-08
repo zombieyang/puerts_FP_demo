@@ -51,7 +51,7 @@ namespace Puerts.Component
             try 
             {
                 var propertiesPickFunc = EditorJsEnv.ExecuteModule<Func<JSObject, List<Property>>>(
-                    "puerts-component/properties-pick.mts", "default"
+                    "puerts-component/properties-pick.mjs", "default"
                 );
 
                 JSObject cls = EditorJsEnv.ExecuteModule<JSObject>(tsModulePath, "default");
@@ -180,7 +180,6 @@ namespace Puerts.Component
             }
             else
             { 
-                UnityEngine.Debug.Log("" + PrimitivePropertySerializerCollector.PropertySerializers);
                 var serializer = PrimitivePropertySerializerCollector.PropertySerializers.Find(e => e.Type == type);
                 if (serializer != null)
                 {

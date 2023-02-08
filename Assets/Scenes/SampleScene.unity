@@ -888,7 +888,7 @@ MonoBehaviour:
       objValue: {fileID: 1635965987}
       primitiveValue: 
       listValue: []
-  tsModulePath: BallSystem.mts
+  tsModulePath: BallSystem.mjs
 --- !u!1 &1265929549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,4 +2308,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties: []
-  tsModulePath: BallController.mts
+  tsModulePath: BallController.mjs

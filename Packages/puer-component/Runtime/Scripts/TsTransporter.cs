@@ -40,7 +40,7 @@ namespace Puerts.Component {
             _jsEnvIdx = jsEnvIdx;
             _tsModulePath = tsModulePath;
             _tsModuleCls = jsEnv.ExecuteModule<JSObject>(_tsModulePath, "default");
-            var hookHandlerInit = jsEnv.ExecuteModule<TransporterInit>("puerts-component/transporter-init.mts", "default");
+            var hookHandlerInit = jsEnv.ExecuteModule<TransporterInit>("puerts-component/transporter-init.mjs", "default");
             hookHandlerInit(_tsModuleCls, this, args);
         }
 
@@ -84,7 +84,7 @@ namespace Puerts.Component {
                 Debug.LogWarning("jsEnv " + _jsEnvIdx + " Disposed");
                 return;
             }
-            var hookHandlerClear = jsEnv.ExecuteModule<TransporterClear>("puerts-component/transporter-clear.mts", "default");
+            var hookHandlerClear = jsEnv.ExecuteModule<TransporterClear>("puerts-component/transporter-clear.mjs", "default");
             hookHandlerClear(_tsModuleCls, this);
         }
     }

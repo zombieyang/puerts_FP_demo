@@ -16,6 +16,9 @@ public class PuerCfg
                 typeof(UnityEngine.Rigidbody),
                 typeof(UnityEngine.Quaternion),
                 typeof(UnityEngine.Vector3),
+                typeof(System.Double),
+                typeof(Puerts.Component.TsTransporter),
+                typeof(System.Tuple<string, object>)
             };
         }
     }

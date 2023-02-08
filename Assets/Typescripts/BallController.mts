@@ -1,7 +1,6 @@
-import { Transporter } from "puerts-component/transporter.deco.mts";
-import { Component } from "puerts-component/component.mts";
-import { Property } from "puerts-component/property.deco.mts";
-import BallSystem from "./BallSystem.mts";
+import { Component } from "puerts-component/component.mjs";
+import { Transporter } from "puerts-component/transporter.deco.mjs";
+import BallSystem from "./BallSystem.mjs";
 
 @Transporter()
 export default class BallController extends Component {

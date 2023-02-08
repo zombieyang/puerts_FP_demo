@@ -1,15 +1,30 @@
 {
+    "files": [
+        "./BallSystem.mts",
+        "./BallController.mts"
+    ],
     "compilerOptions": {
         "target": "esnext",
         "module": "ES2015",
         "noImplicitAny": true,
         "typeRoots": [
             "../Puer_Gen/Gen/Typing",
-            "../../Packages/puer-component/Typing",
-            "../../Library/PackageCache/com.tencent.puerts.core@1.4.1-pre.1/Typing",
+            "../../Library/PackageCache/com.tencent.puerts.core@1.4.1-pre.1/Typing"
         ],
         "moduleResolution": "node",
         "experimentalDecorators": true,
-        "inlineSourceMap": true
-    }
+        "inlineSourceMap": true,
+        "outDir": "./Resources",
+        "paths": {
+            "*": [
+                "T:\\_CODE_\\puerts_FP_demo\\Packages\\puer-component\\Runtime\\Typescripts/*"
+            ]
+        },
+        "composite": true
+    },
+    "references": [
+        {
+            "path": "T:\\_CODE_\\puerts_FP_demo\\Packages\\puer-component\\Runtime\\Typescripts"
+        }
+    ]
 }

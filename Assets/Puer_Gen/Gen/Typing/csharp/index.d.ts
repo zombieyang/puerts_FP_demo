@@ -28,17 +28,17 @@
         {
             protected [__keep_incompatibility]: never;
         }
-        interface IEquatable$1<T>
+        interface IFormattable
         {
         }
-        interface IFormattable
+        interface IEquatable$1<T>
         {
         }
         class Void extends System.ValueType
         {
             protected [__keep_incompatibility]: never;
         }
-        class Boolean extends System.ValueType implements System.IEquatable$1<boolean>, System.IComparable, System.IComparable$1<boolean>, System.IConvertible
+        class Boolean extends System.ValueType implements System.IComparable, System.IComparable$1<boolean>, System.IConvertible, System.IEquatable$1<boolean>
         {
             protected [__keep_incompatibility]: never;
         }
@@ -55,33 +55,33 @@
         {
             protected [__keep_incompatibility]: never;
         }
-        class Single extends System.ValueType implements System.IEquatable$1<number>, System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<number>, System.IConvertible
+        class Single extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>
         {
             protected [__keep_incompatibility]: never;
         }
         interface ISpanFormattable
         {
         }
-        class Int32 extends System.ValueType implements System.IEquatable$1<number>, System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<number>, System.IConvertible
+        class Int32 extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>
         {
             protected [__keep_incompatibility]: never;
         }
-        class String extends System.Object implements System.IEquatable$1<string>, System.ICloneable, System.Collections.Generic.IEnumerable$1<number>, System.IComparable, System.IComparable$1<string>, System.Collections.IEnumerable, System.IConvertible
+        class String extends System.Object implements System.ICloneable, System.IComparable, System.IComparable$1<string>, System.IConvertible, System.Collections.Generic.IEnumerable$1<number>, System.Collections.IEnumerable, System.IEquatable$1<string>
         {
             protected [__keep_incompatibility]: never;
         }
         interface ICloneable
         {
         }
-        class Char extends System.ValueType implements System.IEquatable$1<number>, System.IComparable, System.IComparable$1<number>, System.IConvertible
+        class Char extends System.ValueType implements System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>
         {
             protected [__keep_incompatibility]: never;
         }
-        class Type extends System.Reflection.MemberInfo implements System.Reflection.ICustomAttributeProvider, System.Reflection.IReflect, System.Runtime.InteropServices._MemberInfo, System.Runtime.InteropServices._Type
+        class Type extends System.Reflection.MemberInfo implements System.Runtime.InteropServices._MemberInfo, System.Runtime.InteropServices._Type, System.Reflection.ICustomAttributeProvider, System.Reflection.IReflect
         {
             protected [__keep_incompatibility]: never;
         }
-        class Array extends System.Object implements System.Collections.IStructuralComparable, System.Collections.IStructuralEquatable, System.Collections.ICollection, System.ICloneable, System.Collections.IEnumerable, System.Collections.IList
+        class Array extends System.Object implements System.Collections.IStructuralComparable, System.Collections.IStructuralEquatable, System.ICloneable, System.Collections.ICollection, System.Collections.IEnumerable, System.Collections.IList
         {
             protected [__keep_incompatibility]: never;
             public get LongLength(): bigint;
@@ -149,14 +149,14 @@
             public static ConstrainedCopy ($sourceArray: System.Array, $sourceIndex: number, $destinationArray: System.Array, $destinationIndex: number, $length: number) : void
             public Initialize () : void
         }
-        class UInt64 extends System.ValueType implements System.IEquatable$1<bigint>, System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<bigint>, System.IConvertible
+        class UInt64 extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<bigint>, System.IConvertible, System.IEquatable$1<bigint>
         {
             protected [__keep_incompatibility]: never;
         }
         interface IFormatProvider
         {
         }
-        class Delegate extends System.Object implements System.ICloneable, System.Runtime.Serialization.ISerializable
+        class Delegate extends System.Object implements System.Runtime.Serialization.ISerializable, System.ICloneable
         {
             protected [__keep_incompatibility]: never;
             public get Method(): System.Reflection.MethodInfo;
@@ -222,9 +222,70 @@
         (x: T, y: T) : number; 
         Invoke?: (x: T, y: T) => number;
         }
-        class Int64 extends System.ValueType implements System.IEquatable$1<bigint>, System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<bigint>, System.IConvertible
+        class Int64 extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<bigint>, System.IConvertible, System.IEquatable$1<bigint>
         {
             protected [__keep_incompatibility]: never;
+        }
+        class Double extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>
+        {
+            protected [__keep_incompatibility]: never;
+            public static MinValue : number
+            public static MaxValue : number
+            public static Epsilon : number
+            public static NegativeInfinity : number
+            public static PositiveInfinity : number
+            public static NaN : number
+            public static IsFinite ($d: number) : boolean
+            public static IsInfinity ($d: number) : boolean
+            public static IsNaN ($d: number) : boolean
+            public static IsNegative ($d: number) : boolean
+            public static IsNegativeInfinity ($d: number) : boolean
+            public static IsNormal ($d: number) : boolean
+            public static IsPositiveInfinity ($d: number) : boolean
+            public static IsSubnormal ($d: number) : boolean
+            public CompareTo ($value: any) : number
+            public CompareTo ($value: number) : number
+            public Equals ($obj: any) : boolean
+            public static op_Equality ($left: number, $right: number) : boolean
+            public static op_Inequality ($left: number, $right: number) : boolean
+            public static op_LessThan ($left: number, $right: number) : boolean
+            public static op_GreaterThan ($left: number, $right: number) : boolean
+            public static op_LessThanOrEqual ($left: number, $right: number) : boolean
+            public static op_GreaterThanOrEqual ($left: number, $right: number) : boolean
+            public Equals ($obj: number) : boolean
+            public ToString () : string
+            public ToString ($format: string) : string
+            public ToString ($provider: System.IFormatProvider) : string
+            public ToString ($format: string, $provider: System.IFormatProvider) : string
+            public static Parse ($s: string) : number
+            public static Parse ($s: string, $style: System.Globalization.NumberStyles) : number
+            public static Parse ($s: string, $provider: System.IFormatProvider) : number
+            public static Parse ($s: string, $style: System.Globalization.NumberStyles, $provider: System.IFormatProvider) : number
+            public static TryParse ($s: string, $result: $Ref<number>) : boolean
+            public static TryParse ($s: string, $style: System.Globalization.NumberStyles, $provider: System.IFormatProvider, $result: $Ref<number>) : boolean
+            public GetTypeCode () : System.TypeCode
+            public static Equals ($objA: any, $objB: any) : boolean
+        }
+        class Span$1<T> extends System.ValueType
+        {
+            protected [__keep_incompatibility]: never;
+        }
+        class ReadOnlySpan$1<T> extends System.ValueType
+        {
+            protected [__keep_incompatibility]: never;
+        }
+        enum TypeCode
+        { Empty = 0, Object = 1, DBNull = 2, Boolean = 3, Char = 4, SByte = 5, Byte = 6, Int16 = 7, UInt16 = 8, Int32 = 9, UInt32 = 10, Int64 = 11, UInt64 = 12, Single = 13, Double = 14, Decimal = 15, DateTime = 16, String = 18 }
+        class Tuple$2<T1, T2> extends System.Object implements System.Collections.IStructuralComparable, System.Collections.IStructuralEquatable, System.Runtime.CompilerServices.ITuple, System.IComparable, System.ITupleInternal
+        {
+            protected [__keep_incompatibility]: never;
+            public get Item1(): T1;
+            public get Item2(): T2;
+            public constructor ($item1: T1, $item2: T2)
+            public constructor ()
+        }
+        interface ITupleInternal extends System.Runtime.CompilerServices.ITuple
+        {
         }
     }
     namespace UnityEngine {
@@ -716,7 +777,7 @@
         }
         /** Representation of 3D vectors and points.
         */
-        class Vector3 extends System.ValueType implements System.IEquatable$1<UnityEngine.Vector3>, System.IFormattable
+        class Vector3 extends System.ValueType implements System.IFormattable, System.IEquatable$1<UnityEngine.Vector3>
         {
             protected [__keep_incompatibility]: never;
             public static kEpsilon : number
@@ -769,6 +830,26 @@
             /** Shorthand for writing Vector3(float.NegativeInfinity, float.NegativeInfinity, float.NegativeInfinity).
             */
             public static get negativeInfinity(): UnityEngine.Vector3;
+            /** Spherically interpolates between two vectors.
+            */
+            public static Slerp ($a: UnityEngine.Vector3, $b: UnityEngine.Vector3, $t: number) : UnityEngine.Vector3
+            /** Spherically interpolates between two vectors.
+            */
+            public static SlerpUnclamped ($a: UnityEngine.Vector3, $b: UnityEngine.Vector3, $t: number) : UnityEngine.Vector3
+            /** Makes vectors normalized and orthogonal to each other.
+            */
+            public static OrthoNormalize ($normal: $Ref<UnityEngine.Vector3>, $tangent: $Ref<UnityEngine.Vector3>) : void
+            /** Makes vectors normalized and orthogonal to each other.
+            */
+            public static OrthoNormalize ($normal: $Ref<UnityEngine.Vector3>, $tangent: $Ref<UnityEngine.Vector3>, $binormal: $Ref<UnityEngine.Vector3>) : void
+            /** Rotates a vector current towards target.
+            * @param current The vector being managed.
+            * @param target The vector.
+            * @param maxRadiansDelta The maximum angle in radians allowed for this rotation.
+            * @param maxMagnitudeDelta The maximum allowed change in vector magnitude for this rotation.
+            * @returns The location that RotateTowards generates. 
+            */
+            public static RotateTowards ($current: UnityEngine.Vector3, $target: UnityEngine.Vector3, $maxRadiansDelta: number, $maxMagnitudeDelta: number) : UnityEngine.Vector3
             /** Linearly interpolates between two points.
             * @param a Start value, returned when t = 0.
             * @param b End value, returned when t = 1.
@@ -896,26 +977,6 @@
             * @param formatProvider An object that specifies culture-specific formatting.
             */
             public ToString ($format: string, $formatProvider: System.IFormatProvider) : string
-            /** Spherically interpolates between two vectors.
-            */
-            public static Slerp ($a: UnityEngine.Vector3, $b: UnityEngine.Vector3, $t: number) : UnityEngine.Vector3
-            /** Spherically interpolates between two vectors.
-            */
-            public static SlerpUnclamped ($a: UnityEngine.Vector3, $b: UnityEngine.Vector3, $t: number) : UnityEngine.Vector3
-            /** Makes vectors normalized and orthogonal to each other.
-            */
-            public static OrthoNormalize ($normal: $Ref<UnityEngine.Vector3>, $tangent: $Ref<UnityEngine.Vector3>) : void
-            /** Makes vectors normalized and orthogonal to each other.
-            */
-            public static OrthoNormalize ($normal: $Ref<UnityEngine.Vector3>, $tangent: $Ref<UnityEngine.Vector3>, $binormal: $Ref<UnityEngine.Vector3>) : void
-            /** Rotates a vector current towards target.
-            * @param current The vector being managed.
-            * @param target The vector.
-            * @param maxRadiansDelta The maximum angle in radians allowed for this rotation.
-            * @param maxMagnitudeDelta The maximum allowed change in vector magnitude for this rotation.
-            * @returns The location that RotateTowards generates. 
-            */
-            public static RotateTowards ($current: UnityEngine.Vector3, $target: UnityEngine.Vector3, $maxRadiansDelta: number, $maxMagnitudeDelta: number) : UnityEngine.Vector3
             public constructor ($x: number, $y: number, $z: number)
             public constructor ($x: number, $y: number)
             public Equals ($obj: any) : boolean
@@ -924,7 +985,7 @@
         }
         /** Quaternions are used to represent rotations.
         */
-        class Quaternion extends System.ValueType implements System.IEquatable$1<UnityEngine.Quaternion>, System.IFormattable
+        class Quaternion extends System.ValueType implements System.IFormattable, System.IEquatable$1<UnityEngine.Quaternion>
         {
             protected [__keep_incompatibility]: never;
             /** X component of the Quaternion. Don't modify this directly unless you know quaternions inside out.
@@ -950,6 +1011,45 @@
             /** Returns this quaternion with a magnitude of 1 (Read Only).
             */
             public get normalized(): UnityEngine.Quaternion;
+            /** Creates a rotation which rotates from fromDirection to toDirection.
+            */
+            public static FromToRotation ($fromDirection: UnityEngine.Vector3, $toDirection: UnityEngine.Vector3) : UnityEngine.Quaternion
+            /** Returns the Inverse of rotation.
+            */
+            public static Inverse ($rotation: UnityEngine.Quaternion) : UnityEngine.Quaternion
+            /** Spherically interpolates between quaternions a and b by ratio t. The parameter t is clamped to the range [0, 1].
+            * @param a Start value, returned when t = 0.
+            * @param b End value, returned when t = 1.
+            * @param t Interpolation ratio.
+            * @returns A quaternion spherically interpolated between quaternions a and b. 
+            */
+            public static Slerp ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
+            /** Spherically interpolates between a and b by t. The parameter t is not clamped.
+            */
+            public static SlerpUnclamped ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
+            /** Interpolates between a and b by t and normalizes the result afterwards. The parameter t is clamped to the range [0, 1].
+            * @param a Start value, returned when t = 0.
+            * @param b End value, returned when t = 1.
+            * @param t Interpolation ratio.
+            * @returns A quaternion interpolated between quaternions a and b. 
+            */
+            public static Lerp ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
+            /** Interpolates between a and b by t and normalizes the result afterwards. The parameter t is not clamped.
+            */
+            public static LerpUnclamped ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
+            /** Creates a rotation which rotates angle degrees around axis.
+            */
+            public static AngleAxis ($angle: number, $axis: UnityEngine.Vector3) : UnityEngine.Quaternion
+            /** Creates a rotation with the specified forward and upwards directions.
+            * @param forward The direction to look in.
+            * @param upwards The vector that defines in which direction up is.
+            */
+            public static LookRotation ($forward: UnityEngine.Vector3, $upwards: UnityEngine.Vector3) : UnityEngine.Quaternion
+            /** Creates a rotation with the specified forward and upwards directions.
+            * @param forward The direction to look in.
+            * @param upwards The vector that defines in which direction up is.
+            */
+            public static LookRotation ($forward: UnityEngine.Vector3) : UnityEngine.Quaternion
             public get_Item ($index: number) : number
             public set_Item ($index: number, $value: number) : void
             /** Set x, y, z and w components of an existing Quaternion.
@@ -1007,45 +1107,6 @@
             * @param formatProvider An object that specifies culture-specific formatting.
             */
             public ToString ($format: string, $formatProvider: System.IFormatProvider) : string
-            /** Creates a rotation which rotates from fromDirection to toDirection.
-            */
-            public static FromToRotation ($fromDirection: UnityEngine.Vector3, $toDirection: UnityEngine.Vector3) : UnityEngine.Quaternion
-            /** Returns the Inverse of rotation.
-            */
-            public static Inverse ($rotation: UnityEngine.Quaternion) : UnityEngine.Quaternion
-            /** Spherically interpolates between quaternions a and b by ratio t. The parameter t is clamped to the range [0, 1].
-            * @param a Start value, returned when t = 0.
-            * @param b End value, returned when t = 1.
-            * @param t Interpolation ratio.
-            * @returns A quaternion spherically interpolated between quaternions a and b. 
-            */
-            public static Slerp ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
-            /** Spherically interpolates between a and b by t. The parameter t is not clamped.
-            */
-            public static SlerpUnclamped ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
-            /** Interpolates between a and b by t and normalizes the result afterwards. The parameter t is clamped to the range [0, 1].
-            * @param a Start value, returned when t = 0.
-            * @param b End value, returned when t = 1.
-            * @param t Interpolation ratio.
-            * @returns A quaternion interpolated between quaternions a and b. 
-            */
-            public static Lerp ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
-            /** Interpolates between a and b by t and normalizes the result afterwards. The parameter t is not clamped.
-            */
-            public static LerpUnclamped ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
-            /** Creates a rotation which rotates angle degrees around axis.
-            */
-            public static AngleAxis ($angle: number, $axis: UnityEngine.Vector3) : UnityEngine.Quaternion
-            /** Creates a rotation with the specified forward and upwards directions.
-            * @param forward The direction to look in.
-            * @param upwards The vector that defines in which direction up is.
-            */
-            public static LookRotation ($forward: UnityEngine.Vector3, $upwards: UnityEngine.Vector3) : UnityEngine.Quaternion
-            /** Creates a rotation with the specified forward and upwards directions.
-            * @param forward The direction to look in.
-            * @param upwards The vector that defines in which direction up is.
-            */
-            public static LookRotation ($forward: UnityEngine.Vector3) : UnityEngine.Quaternion
             public constructor ($x: number, $y: number, $z: number, $w: number)
             public Equals ($obj: any) : boolean
             public static Equals ($objA: any, $objB: any) : boolean
@@ -1053,7 +1114,7 @@
         }
         /** A standard 4x4 transformation matrix.
         */
-        class Matrix4x4 extends System.ValueType implements System.IEquatable$1<UnityEngine.Matrix4x4>, System.IFormattable
+        class Matrix4x4 extends System.ValueType implements System.IFormattable, System.IEquatable$1<UnityEngine.Matrix4x4>
         {
             protected [__keep_incompatibility]: never;
         }
@@ -1242,7 +1303,7 @@
         { None = 0, HideInHierarchy = 1, HideInInspector = 2, DontSaveInEditor = 4, NotEditable = 8, DontSaveInBuild = 16, DontUnloadUnusedAsset = 32, DontSave = 52, HideAndDontSave = 61 }
         /** Representation of RGBA colors.
         */
-        class Color extends System.ValueType implements System.IEquatable$1<UnityEngine.Color>, System.IFormattable
+        class Color extends System.ValueType implements System.IFormattable, System.IEquatable$1<UnityEngine.Color>
         {
             protected [__keep_incompatibility]: never;
             /** Red component of the color.
@@ -1367,13 +1428,13 @@
         }
         /** Representation of four-dimensional vectors.
         */
-        class Vector4 extends System.ValueType implements System.IEquatable$1<UnityEngine.Vector4>, System.IFormattable
+        class Vector4 extends System.ValueType implements System.IFormattable, System.IEquatable$1<UnityEngine.Vector4>
         {
             protected [__keep_incompatibility]: never;
         }
         /** Representation of 2D vectors and points.
         */
-        class Vector2 extends System.ValueType implements System.IEquatable$1<UnityEngine.Vector2>, System.IFormattable
+        class Vector2 extends System.ValueType implements System.IFormattable, System.IEquatable$1<UnityEngine.Vector2>
         {
             protected [__keep_incompatibility]: never;
             /** X component of the vector.
@@ -2202,7 +2263,7 @@
         }
         /** A 2D Rectangle defined by X and Y position, width and height.
         */
-        class Rect extends System.ValueType implements System.IEquatable$1<UnityEngine.Rect>, System.IFormattable
+        class Rect extends System.ValueType implements System.IFormattable, System.IEquatable$1<UnityEngine.Rect>
         {
             protected [__keep_incompatibility]: never;
         }
@@ -2643,7 +2704,7 @@
             public constructor ($capacity: number)
             public constructor ($collection: System.Collections.Generic.IEnumerable$1<T>)
         }
-        class Dictionary$2<TKey, TValue> extends System.Object implements System.Collections.Generic.IReadOnlyDictionary$2<TKey, TValue>, System.Collections.Generic.IDictionary$2<TKey, TValue>, System.Collections.ICollection, System.Collections.IDictionary, System.Collections.Generic.IEnumerable$1<System.Collections.Generic.KeyValuePair$2<TKey, TValue>>, System.Runtime.Serialization.IDeserializationCallback, System.Collections.IEnumerable, System.Runtime.Serialization.ISerializable, System.Collections.Generic.IReadOnlyCollection$1<System.Collections.Generic.KeyValuePair$2<TKey, TValue>>, System.Collections.Generic.ICollection$1<System.Collections.Generic.KeyValuePair$2<TKey, TValue>>
+        class Dictionary$2<TKey, TValue> extends System.Object implements System.Runtime.Serialization.IDeserializationCallback, System.Collections.Generic.IReadOnlyDictionary$2<TKey, TValue>, System.Collections.Generic.IDictionary$2<TKey, TValue>, System.Runtime.Serialization.ISerializable, System.Collections.ICollection, System.Collections.IDictionary, System.Collections.Generic.IEnumerable$1<System.Collections.Generic.KeyValuePair$2<TKey, TValue>>, System.Collections.IEnumerable, System.Collections.Generic.IReadOnlyCollection$1<System.Collections.Generic.KeyValuePair$2<TKey, TValue>>, System.Collections.Generic.ICollection$1<System.Collections.Generic.KeyValuePair$2<TKey, TValue>>
         {
             protected [__keep_incompatibility]: never;
             public get Comparer(): System.Collections.Generic.IEqualityComparer$1<TKey>;
@@ -2694,7 +2755,7 @@
         }
     }
     namespace System.Reflection {
-        class MemberInfo extends System.Object implements System.Reflection.ICustomAttributeProvider, System.Runtime.InteropServices._MemberInfo
+        class MemberInfo extends System.Object implements System.Runtime.InteropServices._MemberInfo, System.Reflection.ICustomAttributeProvider
         {
             protected [__keep_incompatibility]: never;
         }
@@ -2704,11 +2765,11 @@
         interface IReflect
         {
         }
-        class MethodBase extends System.Reflection.MemberInfo implements System.Reflection.ICustomAttributeProvider, System.Runtime.InteropServices._MemberInfo, System.Runtime.InteropServices._MethodBase
+        class MethodBase extends System.Reflection.MemberInfo implements System.Runtime.InteropServices._MemberInfo, System.Runtime.InteropServices._MethodBase, System.Reflection.ICustomAttributeProvider
         {
             protected [__keep_incompatibility]: never;
         }
-        class MethodInfo extends System.Reflection.MethodBase implements System.Runtime.InteropServices._MethodInfo, System.Reflection.ICustomAttributeProvider, System.Runtime.InteropServices._MemberInfo, System.Runtime.InteropServices._MethodBase
+        class MethodInfo extends System.Reflection.MethodBase implements System.Runtime.InteropServices._MemberInfo, System.Runtime.InteropServices._MethodBase, System.Runtime.InteropServices._MethodInfo, System.Reflection.ICustomAttributeProvider
         {
             protected [__keep_incompatibility]: never;
         }
@@ -2802,10 +2863,25 @@
             public static JsEnvLoader : Puerts.ILoader
             public constructor ()
         }
+        class TsTransporter extends System.Object
+        {
+            protected [__keep_incompatibility]: never;
+            public static jsEnv : Puerts.JsEnv
+            public RegisterHook ($hookName: string, $hook: Puerts.Component.TsTransporter.Hook) : void
+            public InvokeHook ($hookName: string, ...args: any[]) : void
+            public ContainsHook ($hookName: string) : boolean
+            public Clear () : void
+            public constructor ($tsModulePath: string, $args: System.Collections.Generic.List$1<System.Tuple$2<string, any>>, $jsEnvIdx?: number)
+            public constructor ()
+        }
     }
     namespace Puerts {
         interface ILoader
         {
+        }
+        class JsEnv extends System.Object implements System.IDisposable
+        {
+            protected [__keep_incompatibility]: never;
         }
     }
     namespace Puerts.Component.TsEditorBase {
@@ -2944,6 +3020,23 @@
         class ScriptableCullingParameters extends System.ValueType implements System.IEquatable$1<UnityEngine.Rendering.ScriptableCullingParameters>
         {
             protected [__keep_incompatibility]: never;
+        }
+    }
+    namespace System.Globalization {
+        enum NumberStyles
+        { None = 0, AllowLeadingWhite = 1, AllowTrailingWhite = 2, AllowLeadingSign = 4, AllowTrailingSign = 8, AllowParentheses = 16, AllowDecimalPoint = 32, AllowThousands = 64, AllowExponent = 128, AllowCurrencySymbol = 256, AllowHexSpecifier = 512, Integer = 7, HexNumber = 515, Number = 111, Float = 167, Currency = 383, Any = 511 }
+    }
+    namespace Puerts.Component.TsTransporter {
+        interface Hook
+        { 
+        (args: System.Array$1<any>) : any; 
+        Invoke?: (args: System.Array$1<any>) => any;
+        }
+        var Hook: { new (func: (args: System.Array$1<any>) => any): Hook; }
+    }
+    namespace System.Runtime.CompilerServices {
+        interface ITuple
+        {
         }
     }
 }

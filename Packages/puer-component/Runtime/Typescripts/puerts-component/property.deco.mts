@@ -58,7 +58,7 @@ export function Property(type: PropertyType | typeof CS.System.Object, options?:
             target["__properties"] = {};
         }
         target["__properties"][name] = {
-            propertyKey
+            key: propertyKey
         };
         if (options && options.toTsValue){
             target["__properties"][name].toTsValue = options.toTsValue;
